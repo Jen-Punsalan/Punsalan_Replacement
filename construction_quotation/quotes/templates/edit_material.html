@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Material</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1>Edit Material: {{ material.name }}</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <!-- Same form fields as add_material.html -->
+
+        <!-- Name -->
+        ...
+
+        <!-- Description -->
+        ...
+
+        <!-- Unit -->
+        ...
+
+        <!-- Unit Price -->
+        ...
+
+        <!-- Markup Percentage -->
+        ...
+
+        <!-- Set values from the existing material -->
+
+       <!-- Example for Name -->
+       Name:
+       `<input type='text' name='name' value='{{ material.name }}' required>`
+
+       <!-- Repeat for other fields -->
+
+       ...
+
+       <!-- Submit Button -->
+       `<button type='submit' class='btn btn-primary'>Update Material</button>`
+
+   </form>
+
+   ...
+
+   </div>
+
+   ...

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Project Detail</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-4">
+    <h1>Project Detail</h1>
+
+    <h2>{{ project.description }}</h2>  <!-- Display project description -->
+    <p><strong>Location:</strong> {{ project.location }}</p>  <!-- Display project location -->
+    <p><strong>Area Size:</strong> {{ project.area_size }} sq.m</p>  <!-- Display area size -->
+    <p><strong>Status:</strong> {{ project.status }}</p>  <!-- Display project status -->
+    <p><strong>Created At:</strong> {{ project.created_at }}</p>  <!-- Display creation date -->
+    <p><strong>Updated At:</strong> {{ project.updated_at }}</p>  <!-- Display last updated date -->
+
+    {% load custom_filters %}
+
+<h3>Materials</h3>
+<ul>
+    {% for material in materials %}
+        <li>
+            {{ material.name }} - {{ material.quantity }} {{ material.unit }}
+            @ ${{ material.unit_price }} each (Total: ${{ material.unit_price|floatformat:2|multiply:material.quantity }})
+        </li>
+    {% empty %}
+        <li>No materials added for this project.</li>
+    {% endfor %}
+</ul>
+    <a href="{% url 'material_list' %}" class="btn btn-secondary">Back to Materials List</a>
+</div>
+</body>
+</html>

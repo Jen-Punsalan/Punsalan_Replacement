@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1>Welcome to the Construction Quotation System</h1>
+    <p>Please navigate to request a quote or view your projects.</p>
+</div>
+</body>
+</html>
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="{% url 'home' %}">Home</a>
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'request_quote' %}">Request a Quote</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'material_list' %}">Materials List</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'add_material' %}">Add Material</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container mt-4">
+    {% block content %}
+    {% endblock %}
+</div>
+
+</body>
+</html>
